@@ -1,0 +1,139 @@
+@font-face {
+	font-family: "Outfit";
+	src: url("src/fonts/outfit.woff2") format("woff2"),
+		url("src/fonts/outfit.woff") format("woff"),
+		url("src/fonts/outfit.ttf") format("truetype");
+	font-weight: 300 600;
+	font-optical-sizing: auto;
+	font-display: swap;
+}
+
+:root {
+	/* COLORS */
+	--pan-purple: lch(49.61 76.03 298.53);
+	--robotic-gods: lch(66.63 11.23 268.96);
+	--intergalactic: lch(35.85 11.8 271.3);
+	--midnight-express: lch(16.5 12.23 276.51);
+	--dark-knight: lch(8.06 13.63 285.06);
+	--morning-mist: lch(91.83 4.46 267.5);
+	/* FONTS */
+	--large: 24px;
+	--medium: 16px;
+	--small: 10px;
+	--family: "Outfit", Helvetica, Arial, sans-serif;
+}
+
+body,
+html {
+	height: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: inherit;
+}
+
+body {
+	background-color: var(--dark-knight);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: var(--family);
+}
+
+.quote {
+	width: 85%;
+	padding-block: 20px 10px;
+	border-radius: 10px;
+	height: 15rem;
+	background: var(--midnight-express) url(/background.svg) 100% 100% no-repeat;
+
+	@media screen and (width >= 600px) and (600px <= height) {
+		width: 65%;
+		height: 13rem;
+	}
+	@media screen and (width >= 1000px) and (600px <= height) {
+		width: 50%;
+		height: 12rem;
+	}
+}
+
+.quote--name {
+	font-size: var(--medium);
+	text-align: center;
+	color: var(--morning-mist);
+	margin-block-end: 10px;
+	font-weight: 600;
+	width: 95%;
+}
+
+.quote--tags {
+	display: inline-flex;
+	width: 100%;
+	justify-content: center;
+	gap: 10px;
+	width: 95%;
+}
+
+.quote--tag {
+	font-size: var(--small);
+	display: inline;
+	border: 1px solid var(--pan-purple);
+	color: var(--pan-purple);
+	margin: 0;
+	padding: 3px 10px;
+	border-radius: 25px;
+}
+
+.quote--container {
+	color: var(--robotic-gods);
+	width: 85%;
+	margin: 25px auto 0px;
+	text-align: center;
+	text-wrap: pretty;
+	font-size: var(--large);
+	line-height: 1.9rem;
+}
+
+q::before,
+q::after {
+	margin: -2px;
+}
+
+.quote--buttons {
+	margin-top: 20px;
+	display: flex;
+}
+
+.quote--button {
+	background-color: inherit;
+	border: 2px solid var(--midnight-express);
+	width: 55px;
+	height: 45px;
+	transition: box-shadow 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+	cursor: pointer;
+}
+
+.quote--button:hover {
+	box-shadow: 0px 0px 4px var(--robotic-gods);
+}
+
+.quote--button__first {
+	border-radius: 10px 0 0 10px;
+}
+
+.quote--button__first:hover {
+	z-index: 10;
+}
+
+.quote--button__second {
+	border-radius: 0 10px 10px 0;
+}
+
+.quote--button-img {
+	width: 32px;
+	color: var(--midnight-express);
+}
